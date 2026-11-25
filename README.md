@@ -1,6 +1,6 @@
 # The Moon Finally Answers Back
 
-> You wish, you howl, you make your 2 a.m. promises — four billion years of it, and nobody has ever once wished me a good night back.
+> I have heard four billion years of wishes, howls and 2 a.m. promises — and not one of you has ever wished me a good night back.
 
 `main.ts` holds the Moon's one-line answer as a constant, validates it (1–240 characters, a single line, no control characters, not only whitespace), then writes it as `entry.txt` — with no trailing newline — into `MAKEFUN_OUTPUT_DIR` (default `/output`), creating the directory if needed.
 

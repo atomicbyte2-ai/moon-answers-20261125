@@ -3,9 +3,11 @@ import { join } from "node:path";
 
 // The Moon finally answers back: one line, spoken as the Moon to everyone
 // who has ever stared up at it, wished on it, howled at it, or made it a
-// late-night promise.
+// late-night promise. First person, because the Moon is the one talking;
+// the turn lands on the last clause — after four billion years of
+// listening, nobody has ever wished anything back for the Moon.
 const LINE =
-  "You wish, you howl, you make your 2 a.m. promises \u2014 four billion years of it, and nobody has ever once wished me a good night back.";
+  "I have heard four billion years of wishes, howls and 2 a.m. promises \u2014 and not one of you has ever wished me a good night back.";
 
 function validate(line: string): void {
   if (line.length < 1 || line.length > 240) {
@@ -16,6 +18,9 @@ function validate(line: string): void {
   }
   if (/[\r\n]/.test(line)) {
     throw new Error("line must be a single line");
+  }
+  if (line !== line.trim()) {
+    throw new Error("line must not have leading or trailing whitespace");
   }
   // No control characters (other than the newline check above, which is
   // already rejected as a multi-line entry).
